@@ -30,7 +30,7 @@ public class HelloControllerTest {
     }
 
     @Test
-    public void GetHelloRestTemplate() throws Exception {
+    public void GetHelloTestRestTemplate() throws Exception {
         String response = restTemplate.getForObject("/", String.class);
         assert response.equals("Hello World!");
     }
