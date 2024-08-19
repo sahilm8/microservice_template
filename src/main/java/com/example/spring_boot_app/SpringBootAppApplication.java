@@ -20,7 +20,7 @@ public class SpringBootAppApplication {
 			String[] beans = ctx.getBeanDefinitionNames();
 
 			for (String bean : beans) {
-				System.out.println(bean);
+				System.out.println("- " + bean);
 			}
 		};
 	}
