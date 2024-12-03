@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.template</groupId>
 	<artifactId>microservice</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>microservice_template</name>
 	<description>Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, MySQL Connector, Spring Dotenv, Lombok, and Spring Test.</description>
 	<url/>
