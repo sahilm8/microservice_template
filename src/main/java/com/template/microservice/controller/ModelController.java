@@ -1,7 +1,9 @@
 package com.template.microservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,10 +21,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ModelController {
     @Autowired
-    private static ModelService modelService;
+    private ModelService modelService;
 
     @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public static String home() {
+    public String home() {
         log.info("Received request to GET /home.");
         return String.format(
                 "Microservice Template%n%n" +
@@ -33,20 +35,32 @@ public class ModelController {
     }
 
     @PostMapping(value = "/new-model", produces = MediaType.APPLICATION_JSON_VALUE)
-    public static Model createModel(@RequestBody String name) {
-        log.info("Received request to POST /new-model with argument: " + name);
-        return modelService.createModel(name);
+    public ResponseEntity<Model> createModel(@RequestBody String name) {
+        log.info("Received request to POST /new-model with argument: " + name.trim());
+        Model model = modelService.createModel(name.trim());
+        if (model != null) {
+            return ResponseEntity.ok(model);
+        }
+        return ResponseEntity.status(HttpStatus.CONFLICT).build();
     }
 
     @GetMapping(value = "/get-model", produces = MediaType.APPLICATION_JSON_VALUE)
-    public static Model getModel(@RequestBody String name) {
-        log.info("Received request to GET /get-model with argument: " + name);
-        return modelService.getModel(name);
+    public ResponseEntity<Model> getModel(@RequestBody String name) {
+        log.info("Received request to GET /get-model with argument: " + name.trim());
+        Model model = modelService.getModel(name.trim());
+        if (model != null) {
+            return ResponseEntity.ok(model);            
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @DeleteMapping(value = "/delete-model", produces = MediaType.APPLICATION_JSON_VALUE)
-    public static Model deleteModel(@RequestBody String name) {
-        log.info("Received request to DELETE /delete-model with argument: " + name);
-        return modelService.getModel(name);
+    public ResponseEntity<String> deleteModel(@RequestBody String name) {
+        log.info("Received request to DELETE /delete-model with argument: " + name.trim());
+        boolean response = modelService.deleteModel(name.trim());
+        if (response) {
+            return ResponseEntity.ok("Model deleted successfully.");
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }

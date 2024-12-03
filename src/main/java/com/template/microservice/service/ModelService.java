@@ -14,11 +14,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ModelService {
     @Autowired
-    private static ModelRepository modelRepository;
+    private ModelRepository modelRepository;
 
     public Model createModel(String name) {
         if (modelRepository.findByName(name).isEmpty()) {
             Model model = new Model();
+            model.setName(name);
             modelRepository.save(model);
             log.info("Model created: " + model.toString());
             return model;    
@@ -38,13 +39,14 @@ public class ModelService {
         return null;
     }
 
-    public void deleteModel(String name) {
+    public boolean deleteModel(String name) {
         if (modelRepository.findByName(name).isPresent()) {
             Model model = modelRepository.findByName(name).get();
             modelRepository.delete(model);
             log.info("Model deleted: " + name);
-            return;
+            return true;
         }
         log.info("Model not found: " + name);
+        return false;
     }
 }
