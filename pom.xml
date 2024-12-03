@@ -12,7 +12,7 @@
 	<artifactId>microservice</artifactId>
 	<version>1.0.0</version>
 	<name>microservice_template</name>
-	<description>Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, MySQL Connector, Spring Dotenv, Lombok, and Spring Test.</description>
+	<description>Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, MySQL Connector, Docker, Spring Dotenv, Lombok, and Spring Test.</description>
 	<url/>
 	<licenses>
 		<license>

@@ -15,6 +15,7 @@ Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, My
 - Spring Web
 - Spring Data JPA
 - MySQL Connector
+- Docker
 - Spring Dotenv
 - Lombok
 - Spring Test
