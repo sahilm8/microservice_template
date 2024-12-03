@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.2</version>
+		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>microservice_template</artifactId>
+	<groupId>com.template</groupId>
+	<artifactId>microservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>microservice_template</name>
 	<description>Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, MySQL Connector, Spring Dotenv, Lombok, and Spring Test.</description>
