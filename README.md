@@ -19,3 +19,32 @@ Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, My
 - Spring Dotenv
 - Lombok
 - Spring Test
+
+
+## Setup
+
+- Install dependencies:
+```
+./mvnw clean install
+```
+- Pull Docker MySQL image for running database server:
+```
+docker pull mysql:latest
+```
+
+- Create an external volume for storing MySQL data:
+```
+docker volume create mysql_volume
+```
+- Run the container:
+```
+docker compose up -d
+```
+- Start the application:
+```
+./mvnw spring-boot:run
+```
+- Stop the container:
+```
+docker compose down
+```
