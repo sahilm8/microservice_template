@@ -6,7 +6,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, MySQL Connector, Spring Dotenv, Lombok, and Spring Test.
+Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, MySQL Connector, Docker, Spring Dotenv, Lombok, and Spring Test.
 
 ## Stack
 
