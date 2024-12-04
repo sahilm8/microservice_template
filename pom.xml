@@ -13,7 +13,7 @@
 	<version>1.0.2</version>
 	<name>template_svc</name>
 	<description>
-		Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA,
+		Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Data JPA,
 		MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, and H2 Database.
 	</description>
 	<url/>
