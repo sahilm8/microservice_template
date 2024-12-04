@@ -8,11 +8,14 @@
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.template</groupId>
-	<artifactId>microservice</artifactId>
-	<version>1.0.0</version>
-	<name>microservice_template</name>
-	<description>Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA, MySQL Connector, Docker, Spring Dotenv, Lombok, and Spring Test.</description>
+	<groupId>com.sahil</groupId>
+	<artifactId>template</artifactId>
+	<version>1.0.2</version>
+	<name>template_svc</name>
+	<description>
+		Microservice template with Java 21, Spring Boot, Spring Web, Spring Data JPA,
+		MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, and H2 Database.
+	</description>
 	<url/>
 	<licenses>
 		<license>
@@ -66,6 +69,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<version>3.3.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.3.232</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
