@@ -1,4 +1,4 @@
-package com.sahil.template.model;
+package com.sahil.microservice.template.model;
 
 import java.util.Date;
 

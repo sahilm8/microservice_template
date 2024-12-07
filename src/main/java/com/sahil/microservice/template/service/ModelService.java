@@ -1,11 +1,11 @@
-package com.sahil.template.service;
+package com.sahil.microservice.template.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sahil.template.model.Model;
-import com.sahil.template.repository.ModelRepository;
+import com.sahil.microservice.template.model.Model;
+import com.sahil.microservice.template.repository.ModelRepository;
 
 import lombok.extern.slf4j.Slf4j;
 

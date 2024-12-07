@@ -1,4 +1,4 @@
-package com.sahil.template;
+package com.sahil.microservice.template;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

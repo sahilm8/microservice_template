@@ -1,4 +1,4 @@
-package com.sahil.template.controller;
+package com.sahil.microservice.template.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sahil.template.model.Model;
-import com.sahil.template.service.ModelService;
+import com.sahil.microservice.template.model.Model;
+import com.sahil.microservice.template.service.ModelService;
 
 import lombok.extern.slf4j.Slf4j;
 
