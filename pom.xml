@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sahil</groupId>
-	<artifactId>template</artifactId>
+	<artifactId>microservice.template</artifactId>
 	<version>1.0.2</version>
-	<name>template_svc</name>
+	<name>microservice_template</name>
 	<description>
 		Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Data JPA,
 		MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, and H2 Database.
