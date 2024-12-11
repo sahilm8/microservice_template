@@ -25,7 +25,7 @@ public class ModelController {
 
     @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
     public String home() {
-        log.info("Received request to GET /home.");
+        log.info("Received request to GET /.");
         return String.format(
                 "Microservice Template%n%n" +
                         "Welcome to the model endpoint, you can make the following requests:%n" +
