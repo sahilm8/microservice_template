@@ -26,6 +26,11 @@ Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Data 
 
 Instances can be created, fetched, or deleted for the default model class whose data is stored in a Docker MySQL container:
 
+- GET /:
+```
+curl -i -X GET http://localhost:8080/api/v1/model/
+```
+
 - POST /new-model: 
 ```
 curl -i -X POST -H "Content-Type: application/json" -d "Model Name" http://localhost:8080/api/v1/model/new-model
