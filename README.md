@@ -25,14 +25,17 @@ Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Data 
 ## Endpoints
 
 Instances can be created, fetched, or deleted for the default model class whose data is stored in a Docker MySQL container:
+
 - POST /new-model: 
 ```
 curl -i -X POST -H "Content-Type: application/json" -d "Model Name" http://localhost:8080/api/v1/model/new-model
 ```
+
 - GET /get-model:
 ```
 curl -i -X GET -H "Content-Type: application/json" -d "Model Name" http://localhost:8080/api/v1/model/get-model
 ```
+
 - DELETE /delete-model:
 ```
 curl -i -X DELETE -H "Content-Type: application/json" -d "Model Name" http://localhost:8080/api/v1/model/delete-model
@@ -44,22 +47,27 @@ curl -i -X DELETE -H "Content-Type: application/json" -d "Model Name" http://loc
 ```
 ./mvnw clean install
 ```
+
 - Pull Docker MySQL image for running database server:
 ```
 docker pull mysql:latest
 ```
+
 - Create an external volume for storing MySQL data:
 ```
 docker volume create mysql_volume
 ```
+
 - Run the container:
 ```
 docker compose up -d
 ```
+
 - Start the application:
 ```
 ./mvnw spring-boot:run
 ```
+
 - Stop the container:
 ```
 docker compose down
