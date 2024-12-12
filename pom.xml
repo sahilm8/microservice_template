@@ -10,11 +10,11 @@
 	</parent>
 	<groupId>com.sahil</groupId>
 	<artifactId>microservice.template</artifactId>
-	<version>1.0.2</version>
+	<version>1.1.0</version>
 	<name>microservice_template</name>
 	<description>
-		Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Data JPA,
-		MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, and H2 Database.
+		Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Webflux, Spring Data JPA,
+		MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, H2 Database, and MacOS DNS Resolver.
 	</description>
 	<url/>
 	<licenses>
@@ -43,6 +43,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>3.3.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
 			<version>3.3.5</version>
 		</dependency>
 		<dependency>
@@ -76,6 +81,12 @@
 			<artifactId>h2</artifactId>
 			<version>2.3.232</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-resolver-dns-native-macos</artifactId>
+			<version>4.1.115.Final</version>
+			<classifier>osx-aarch_64</classifier>
 		</dependency>
 	</dependencies>
 	<build>
