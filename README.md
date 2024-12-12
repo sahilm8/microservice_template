@@ -6,7 +6,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Data JPA, MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, and H2 Database.
+Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Webflux, Spring Data JPA, MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, H2 Database, and MacOS DNS Resolver.
 
 ## Stack
 
@@ -14,6 +14,7 @@ Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Data 
 - Maven
 - Spring Boot
 - Spring Web
+- Spring Webflux
 - Spring Data JPA
 - MySQL Connector
 - Docker
@@ -21,10 +22,11 @@ Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Data 
 - Lombok
 - Spring Test
 - H2 Database
+- MacOS DNS Resolver
 
 ## Endpoints
 
-Instances can be created, fetched, or deleted for the default model class whose data is stored in a Docker MySQL container:
+Instances can be created, fetched, or deleted for the default model class whose data is stored in a Docker MySQL volume (mysql_volume):
 
 - GET /:
 ```
