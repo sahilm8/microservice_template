@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sahil.microservice.template.model.Model;
@@ -35,7 +35,7 @@ public class ModelController {
     }
 
     @PostMapping(value = "/new-model", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Model> createModel(@RequestBody String name) {
+    public ResponseEntity<Model> createModel(@RequestParam String name) {
         log.info("Received request to POST /new-model with argument: " + name.trim());
         Model model = modelService.createModel(name.trim());
         if (model != null) {
@@ -45,7 +45,7 @@ public class ModelController {
     }
 
     @GetMapping(value = "/get-model", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Model> getModel(@RequestBody String name) {
+    public ResponseEntity<Model> getModel(@RequestParam String name) {
         log.info("Received request to GET /get-model with argument: " + name.trim());
         Model model = modelService.getModel(name.trim());
         if (model != null) {
@@ -55,7 +55,7 @@ public class ModelController {
     }
 
     @DeleteMapping(value = "/delete-model", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> deleteModel(@RequestBody String name) {
+    public ResponseEntity<String> deleteModel(@RequestParam String name) {
         log.info("Received request to DELETE /delete-model with argument: " + name.trim());
         boolean response = modelService.deleteModel(name.trim());
         if (response) {
