@@ -6,7 +6,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Webflux, Spring Data JPA, MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, H2 Database, and MacOS DNS Resolver.
+Microservice API template with Java 21, Maven, Spring Boot, Spring Web, Spring Webflux, Reactor Core, Spring Data JPA, MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, H2 Database, and MacOS DNS Resolver.
 
 ## Stack
 
