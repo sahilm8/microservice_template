@@ -13,7 +13,7 @@
 	<version>1.1.1</version>
 	<name>microservice_template</name>
 	<description>
-		Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Webflux, Spring Data JPA,
+		Microservice API template with Java 21, Maven, Spring Boot, Spring Web, Spring Webflux, Spring Data JPA,
 		MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, H2 Database, and MacOS DNS Resolver.
 	</description>
 	<url/>
