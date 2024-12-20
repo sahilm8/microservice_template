@@ -25,30 +25,6 @@ Microservice API template with Java 21, Maven, Spring Boot, Spring Web, Spring W
 - H2 Database
 - MacOS DNS Resolver
 
-## Endpoints
-
-Instances can be created, fetched, or deleted for the default model class whose data is stored in a Docker MySQL volume (mysql_volume):
-
-- GET /:
-```
-curl -i -X GET http://localhost:8080/api/v1/model/
-```
-
-- POST /new-model: 
-```
-curl -i -X POST "http://localhost:8080/api/v1/model/new-model?name=ABC"
-```
-
-- GET /get-model:
-```
-curl -i -X GET "http://localhost:8080/api/v1/model/get-model?name=ABC"
-```
-
-- DELETE /delete-model:
-```
-curl -i -X DELETE "http://localhost:8080/api/v1/model/delete-model?name=ABC"
-```
-
 ## Setup
 
 - Install dependencies:
@@ -79,4 +55,30 @@ docker compose up -d
 - Stop the container:
 ```
 docker compose down
+```
+
+## Endpoints
+
+Instances can be created, fetched, or deleted for the default model class whose data is stored in a Docker MySQL volume (mysql_volume).
+
+### Requests
+
+- GET /:
+```
+curl -i -X GET http://localhost:8080/api/v1/model/
+```
+
+- POST /new-model: 
+```
+curl -i -X POST "http://localhost:8080/api/v1/model/new-model?name=ABC"
+```
+
+- GET /get-model:
+```
+curl -i -X GET "http://localhost:8080/api/v1/model/get-model?name=ABC"
+```
+
+- DELETE /delete-model:
+```
+curl -i -X DELETE "http://localhost:8080/api/v1/model/delete-model?name=ABC"
 ```
