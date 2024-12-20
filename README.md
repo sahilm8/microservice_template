@@ -15,6 +15,7 @@ Microservice template with Java 21, Maven, Spring Boot, Spring Web, Spring Webfl
 - Spring Boot
 - Spring Web
 - Spring Webflux
+- Reactor Core
 - Spring Data JPA
 - MySQL Connector
 - Docker
