@@ -27,7 +27,7 @@ public class ModelController {
     public String home() {
         log.info("Received request to GET /.");
         return String.format(
-                "Microservice Template%n%n" +
+                "Microservice API Template%n%n" +
                         "Welcome to the model endpoint, you can make the following requests:%n" +
                         "- POST /new-model%n" +
                         "- GET /get-model%n" +
