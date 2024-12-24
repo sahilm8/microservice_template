@@ -29,15 +29,15 @@ public class ModelController {
         return String.format(
                 "Microservice API Template%n%n" +
                         "Welcome to the model endpoint, you can make the following requests:%n" +
-                        "- POST /new-model%n" +
+                        "- POST /add-model%n" +
                         "- GET /get-model%n" +
                         "- DELETE /delete-model%n");
     }
 
-    @PostMapping(value = "/new-model", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Model> createModel(@RequestParam String name) {
+    @PostMapping(value = "/add-model", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Model> addModel(@RequestParam String name) {
         log.info("Received request to POST /new-model with argument: " + name.trim());
-        Model model = modelService.createModel(name.trim());
+        Model model = modelService.addModel(name.trim());
         if (model != null) {
             return ResponseEntity.ok(model);
         }

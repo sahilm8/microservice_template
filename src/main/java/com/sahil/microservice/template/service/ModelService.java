@@ -16,7 +16,7 @@ public class ModelService {
     @Autowired
     private ModelRepository modelRepository;
 
-    public Model createModel(String name) {
+    public Model addModel(String name) {
         if (modelRepository.findByName(name).isEmpty()) {
             Model model = new Model();
             model.setName(name);
