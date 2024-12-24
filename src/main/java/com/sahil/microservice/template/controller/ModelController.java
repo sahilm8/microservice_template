@@ -36,7 +36,7 @@ public class ModelController {
 
     @PostMapping(value = "/add-model", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Model> addModel(@RequestParam String name) {
-        log.info("Received request to POST /new-model with argument: " + name.trim());
+        log.info("Received request to POST /add-model with argument: " + name.trim());
         Model model = modelService.addModel(name.trim());
         if (model != null) {
             return ResponseEntity.ok(model);
