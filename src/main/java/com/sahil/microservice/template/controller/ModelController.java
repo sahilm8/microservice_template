@@ -32,7 +32,7 @@ public class ModelController {
     public ResponseEntity<String> home() {
         return ResponseEntity.ok(String.format(
                 "Microservice API Template%n%n" +
-                        "Welcome to the model endpoint, you can make the following requests:%n" +
+                        "Welcome to the /model endpoint, you can make the following requests:%n" +
                         "- POST /add-model%n" +
                         "- GET /get-model%n" +
                         "- DELETE /delete-model%n"));
