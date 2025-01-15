@@ -125,7 +125,7 @@ curl --location --request GET 'localhost:8080/api/v1/model/get-model' \
 #### Request
 
 ```
-curl --location --request GET 'localhost:8080/api/v1/model/delete-model' \
+curl --location --request DELETE 'localhost:8080/api/v1/model/delete-model' \
 --header 'Content-Type: application/json' \
 --data '{
     "name": "Test User"
