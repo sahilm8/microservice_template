@@ -8,14 +8,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-@Entity
-@Table(name = "Model")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "model")
 public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +28,9 @@ public class Model {
 
     @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
+    private String description;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)

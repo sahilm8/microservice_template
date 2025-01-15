@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,28 +15,29 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sahil.microservice.template.model.Model;
 import com.sahil.microservice.template.service.ModelService;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("api/v1/model")
-@Slf4j
+@RequestMapping("/api/v1/model")
+@RequiredArgsConstructor
+@Validated
 public class ModelController {
-    @Autowired
     private ModelService modelService;
 
     @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String home() {
-        log.info("Received request to GET /.");
-        return String.format(
+    public ResponseEntity<String> home() {
+        return ResponseEntity.ok(String.format(
                 "Microservice API Template%n%n" +
                         "Welcome to the model endpoint, you can make the following requests:%n" +
                         "- POST /add-model%n" +
                         "- GET /get-model%n" +
-                        "- DELETE /delete-model%n");
+                        "- DELETE /delete-model%n"));
     }
 
     @PostMapping(value = "/add-model", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Model> addModel(@RequestParam String name) {
+    public ResponseEntity<Mono<Model>> addModel(@RequestParam String name) {
         log.info("Received request to POST /add-model with argument: " + name.trim());
         Model model = modelService.addModel(name.trim());
         if (model != null) {
@@ -49,7 +51,7 @@ public class ModelController {
         log.info("Received request to GET /get-model with argument: " + name.trim());
         Model model = modelService.getModel(name.trim());
         if (model != null) {
-            return ResponseEntity.ok(model);            
+            return ResponseEntity.ok(model);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
