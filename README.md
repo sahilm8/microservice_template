@@ -69,7 +69,9 @@ docker compose down
 
 Instances can be created, fetched, or deleted for the default model class that is stored in a Docker MySQL volume.
 
-### Add Model Request
+### Add Model
+
+#### Request
 
 ```
 curl --location 'localhost:8080/api/v1/model/add-model' \
@@ -80,7 +82,7 @@ curl --location 'localhost:8080/api/v1/model/add-model' \
 }'
 ```
 
-### Add Model Response
+#### Response
 
 ```
 {
@@ -93,7 +95,9 @@ curl --location 'localhost:8080/api/v1/model/add-model' \
 }
 ```
 
-### Get Model Request
+### Get Model
+
+#### Request
 
 ```
 curl --location --request GET 'localhost:8080/api/v1/model/get-model' \
@@ -103,7 +107,7 @@ curl --location --request GET 'localhost:8080/api/v1/model/get-model' \
 }'
 ```
 
-### Get Model Response
+#### Response
 
 ```
 {
@@ -116,7 +120,9 @@ curl --location --request GET 'localhost:8080/api/v1/model/get-model' \
 }
 ```
 
-### Delete Model Request
+### Delete Model
+
+#### Request
 
 ```
 curl --location --request GET 'localhost:8080/api/v1/model/delete-model' \
@@ -126,7 +132,7 @@ curl --location --request GET 'localhost:8080/api/v1/model/delete-model' \
 }'
 ```
 
-### Delete Model Response
+#### Response
 
 ```
 {
