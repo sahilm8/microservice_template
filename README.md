@@ -6,7 +6,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Microservice API template with Java 21, Maven, Spring Boot, Spring Web, Spring Webflux, Reactor Core, Spring Data JPA, MySQL Connector, Docker, Spring Dotenv, Lombok, Spring Test, H2 Database, and MacOS DNS Resolver.
+Microservice template with Java, Spring Boot, MySQL, and Docker.
 
 ## Stack
 
@@ -16,43 +16,53 @@ Microservice API template with Java 21, Maven, Spring Boot, Spring Web, Spring W
 - Spring Web
 - Spring Webflux
 - Reactor Core
+- Spring Validation
+- Jakarta Validation
 - Spring Data JPA
 - MySQL Connector
-- Docker
+- Spring Security
+- Jason Web Token
 - Spring Dotenv
 - Lombok
 - Spring Test
 - H2 Database
 - MacOS DNS Resolver
+- Docker
 
 ## Setup
 
 - Install dependencies:
+
 ```
 ./mvnw clean install
 ```
 
 - Pull Docker MySQL image for running database server:
+
 ```
 docker pull mysql:latest
 ```
 
 - Create an external volume for storing MySQL data:
+
 ```
 docker volume create mysql_volume
 ```
 
 - Run the container:
+
 ```
 docker compose up -d
 ```
 
 - Start the application:
+
 ```
 ./mvnw spring-boot:run
 ```
 
 - Stop the container:
+
 ```
 docker compose down
 ```
@@ -64,21 +74,25 @@ Instances can be created, fetched, or deleted for the default model class whose 
 ### Requests
 
 - GET /:
+
 ```
 curl -i -X GET http://localhost:8080/api/v1/model/
 ```
 
-- POST /new-model: 
+- POST /new-model:
+
 ```
 curl -i -X POST "http://localhost:8080/api/v1/model/new-model?name=ABC"
 ```
 
 - GET /get-model:
+
 ```
 curl -i -X GET "http://localhost:8080/api/v1/model/get-model?name=ABC"
 ```
 
 - DELETE /delete-model:
+
 ```
 curl -i -X DELETE "http://localhost:8080/api/v1/model/delete-model?name=ABC"
 ```
