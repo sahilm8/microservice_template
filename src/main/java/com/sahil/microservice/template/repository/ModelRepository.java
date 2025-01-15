@@ -10,4 +10,7 @@ import com.sahil.microservice.template.model.Model;
 @Repository
 public interface ModelRepository extends JpaRepository<Model, Long> {
     public Optional<Model> findByName(String name);
+
+    boolean existsByName(String name);
+
 }
