@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 @RequiredArgsConstructor
 public class ModelService {
-    private ModelRepository modelRepository;
+    private final ModelRepository modelRepository;
 
     public AddModelResponse addModel(AddModelRequest addModelRequest) {
         if (!modelRepository.existsByName(addModelRequest.getName())) {
