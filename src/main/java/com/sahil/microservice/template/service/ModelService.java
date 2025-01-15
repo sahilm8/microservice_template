@@ -1,52 +1,52 @@
 package com.sahil.microservice.template.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sahil.microservice.template.dto.AddModelRequest;
+import com.sahil.microservice.template.dto.AddModelResponse;
+import com.sahil.microservice.template.dto.DeleteModelRequest;
+import com.sahil.microservice.template.dto.DeleteModelResponse;
+import com.sahil.microservice.template.dto.GetModelRequest;
+import com.sahil.microservice.template.dto.GetModelResponse;
+import com.sahil.microservice.template.exception.ModelAlreadyExistsException;
+import com.sahil.microservice.template.exception.ModelNotFoundException;
 import com.sahil.microservice.template.model.Model;
 import com.sahil.microservice.template.repository.ModelRepository;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 
 @Service
 @Transactional
-@Slf4j
+@RequiredArgsConstructor
 public class ModelService {
-    @Autowired
     private ModelRepository modelRepository;
 
-    public Model addModel(String name) {
-        if (modelRepository.findByName(name).isEmpty()) {
+    public AddModelResponse addModel(AddModelRequest addModelRequest) {
+        if (!modelRepository.existsByName(addModelRequest.getName())) {
             Model model = new Model();
-            model.setName(name);
-            modelRepository.save(model);
-            log.info("Model created: " + model.toString());
-            return model; 
+            model.setName(addModelRequest.getName());
+            model.setDescription(addModelRequest.getDescription());
+            Model savedModel = modelRepository.save(model);
+            return AddModelResponse.builder().model(savedModel).build();
         }
-        Model model = modelRepository.findByName(name).get();
-        log.info("Model already exists: " + model.toString());
-        return null;
+        throw new ModelAlreadyExistsException("Model already exists");
     }
 
-    public Model getModel(String name) {
-        if (modelRepository.findByName(name).isPresent()) {
-            Model model = modelRepository.findByName(name).get();
-            log.info("Model found: " + model.toString());
-            return model;
+    public GetModelResponse getModel(GetModelRequest getModelRequest) {
+        if (modelRepository.existsByName(getModelRequest.getName())) {
+            Model model = modelRepository.findByName(getModelRequest.getName()).get();
+            return GetModelResponse.builder().model(model).build();
         }
-        log.info("Model not found: " + name);
-        return null;
+        throw new ModelNotFoundException("Model not found");
     }
 
-    public boolean deleteModel(String name) {
-        if (modelRepository.findByName(name).isPresent()) {
-            Model model = modelRepository.findByName(name).get();
+    public DeleteModelResponse deleteModel(DeleteModelRequest deleteModelRequest) {
+        if (modelRepository.existsByName(deleteModelRequest.getName())) {
+            Model model = modelRepository.findByName(deleteModelRequest.getName()).get();
             modelRepository.delete(model);
-            log.info("Model deleted: " + name);
-            return true;
+            return DeleteModelResponse.builder().status("Model deleted successfully").build();
         }
-        log.info("Model not found: " + name);
-        return false;
+        throw new ModelNotFoundException("Model not found");
     }
 }
