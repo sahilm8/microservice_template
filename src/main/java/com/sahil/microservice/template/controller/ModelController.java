@@ -52,4 +52,10 @@ public class ModelController {
     public ResponseEntity<DeleteModelResponse> deleteModel(@Valid @RequestBody DeleteModelRequest deleteModelRequest) {
         return ResponseEntity.ok(modelService.deleteModel(deleteModelRequest));
     }
+
+    @GetMapping(value = "/*", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> invalid() {
+        return ResponseEntity
+                .ok("Invalid request, please refer to the README at https://github.com/sahilm8/microservice_template");
+    }
 }
