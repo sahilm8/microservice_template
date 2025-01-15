@@ -20,8 +20,6 @@ Microservice template with Java, Spring Boot, MySQL, and Docker.
 - Jakarta Validation
 - Spring Data JPA
 - MySQL Connector
-- Spring Security
-- Jason Web Token
 - Spring Dotenv
 - Lombok
 - Spring Test
@@ -69,30 +67,69 @@ docker compose down
 
 ## Endpoints
 
-Instances can be created, fetched, or deleted for the default model class whose data is stored in a Docker MySQL volume (mysql_volume).
+Instances can be created, fetched, or deleted for the default model class that is stored in a Docker MySQL volume.
 
-### Requests
-
-- GET /:
+### Add Model Request
 
 ```
-curl -i -X GET http://localhost:8080/api/v1/model/
+curl --location 'localhost:8080/api/v1/model/add-model' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Test User",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}'
 ```
 
-- POST /new-model:
+### Add Model Response
 
 ```
-curl -i -X POST "http://localhost:8080/api/v1/model/new-model?name=ABC"
+{
+    "model": {
+        "id": 1,
+        "name": "Test User",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "createdAt": "2025-01-15T08:20:33.355+00:00"
+    }
+}
 ```
 
-- GET /get-model:
+### Get Model Request
 
 ```
-curl -i -X GET "http://localhost:8080/api/v1/model/get-model?name=ABC"
+curl --location --request GET 'localhost:8080/api/v1/model/get-model' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Test User"
+}'
 ```
 
-- DELETE /delete-model:
+### Get Model Response
 
 ```
-curl -i -X DELETE "http://localhost:8080/api/v1/model/delete-model?name=ABC"
+{
+    "model": {
+        "id": 1,
+        "name": "Test User",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "createdAt": "2025-01-15T08:20:33.355+00:00"
+    }
+}
+```
+
+### Delete Model Request
+
+```
+curl --location --request GET 'localhost:8080/api/v1/model/delete-model' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Test User"
+}'
+```
+
+### Delete Model Response
+
+```
+{
+    "status": "Model deleted successfully"
+}
 ```
