@@ -24,9 +24,10 @@ public class ModelService {
 
     public AddModelResponse addModel(AddModelRequest addModelRequest) {
         if (!modelRepository.existsByName(addModelRequest.getName())) {
-            Model model = new Model();
-            model.setName(addModelRequest.getName());
-            model.setDescription(addModelRequest.getDescription());
+            Model model = Model.builder()
+                    .name(addModelRequest.getName())
+                    .description(addModelRequest.getDescription())
+                    .build();
             Model savedModel = modelRepository.save(model);
             return AddModelResponse.builder().model(savedModel).build();
         }
