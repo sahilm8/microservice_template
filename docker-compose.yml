@@ -23,5 +23,5 @@ services:
 
 volumes:
   microservice_template_volume:
-    name: mysql_volume
+    name: microservice_template_volume
     external: true
