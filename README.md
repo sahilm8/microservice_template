@@ -78,7 +78,7 @@ Requests can be made to perform the following actions:
 #### Request
 
 ```
-curl --location 'localhost:8080/api/v1/model/add-model' \
+curl --location 'localhost:8080/api/v2/model/add-model' \
 --header 'Content-Type: application/json' \
 --data '{
     "name": "Test User",
@@ -104,7 +104,7 @@ curl --location 'localhost:8080/api/v1/model/add-model' \
 #### Request
 
 ```
-curl --location --request GET 'localhost:8080/api/v1/model/get-model' \
+curl --location --request GET 'localhost:8080/api/v2/model/get-model' \
 --header 'Content-Type: application/json' \
 --data '{
     "name": "Test User"
@@ -129,7 +129,7 @@ curl --location --request GET 'localhost:8080/api/v1/model/get-model' \
 #### Request
 
 ```
-curl --location --request DELETE 'localhost:8080/api/v1/model/delete-model' \
+curl --location --request DELETE 'localhost:8080/api/v2/model/delete-model' \
 --header 'Content-Type: application/json' \
 --data '{
     "name": "Test User"
