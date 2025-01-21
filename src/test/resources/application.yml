@@ -1,6 +1,8 @@
 spring:
   application:
     name: microservice_template
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
   datasource:
     url: jdbc:h2:mem:${TEST_DATABASE}
     username: ${TEST_USER}

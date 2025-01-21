@@ -1,6 +1,8 @@
 spring:
   application:
     name: microservice_template
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
   datasource:
     url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE}
     username: ${MYSQL_USER}
