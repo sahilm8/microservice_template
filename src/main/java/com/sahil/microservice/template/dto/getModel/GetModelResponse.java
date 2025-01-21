@@ -1,4 +1,4 @@
-package com.sahil.microservice.template.dto;
+package com.sahil.microservice.template.dto.getModel;
 
 import com.sahil.microservice.template.model.Model;
 

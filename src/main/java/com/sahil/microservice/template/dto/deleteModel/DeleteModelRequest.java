@@ -1,4 +1,4 @@
-package com.sahil.microservice.template.dto;
+package com.sahil.microservice.template.dto.deleteModel;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

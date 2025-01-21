@@ -1,4 +1,6 @@
-package com.sahil.microservice.template.dto;
+package com.sahil.microservice.template.dto.addModel;
+
+import com.sahil.microservice.template.model.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeleteModelResponse {
-    private String status;
+public class AddModelResponse {
+    private Model model;
 }

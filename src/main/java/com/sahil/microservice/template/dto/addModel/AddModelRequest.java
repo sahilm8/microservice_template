@@ -1,4 +1,4 @@
-package com.sahil.microservice.template.dto;
+package com.sahil.microservice.template.dto.addModel;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GetModelRequest {
+public class AddModelRequest {
     @NotBlank(message = "Name is required")
     private String name;
+
+    @NotBlank(message = "Description is required")
+    private String description;
 }
