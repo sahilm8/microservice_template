@@ -3,12 +3,12 @@ package com.sahil.microservice.template.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sahil.microservice.template.dto.AddModelRequest;
-import com.sahil.microservice.template.dto.AddModelResponse;
-import com.sahil.microservice.template.dto.DeleteModelRequest;
-import com.sahil.microservice.template.dto.DeleteModelResponse;
-import com.sahil.microservice.template.dto.GetModelRequest;
-import com.sahil.microservice.template.dto.GetModelResponse;
+import com.sahil.microservice.template.dto.addModel.AddModelRequest;
+import com.sahil.microservice.template.dto.addModel.AddModelResponse;
+import com.sahil.microservice.template.dto.deleteModel.DeleteModelRequest;
+import com.sahil.microservice.template.dto.deleteModel.DeleteModelResponse;
+import com.sahil.microservice.template.dto.getModel.GetModelRequest;
+import com.sahil.microservice.template.dto.getModel.GetModelResponse;
 import com.sahil.microservice.template.exception.ModelAlreadyExistsException;
 import com.sahil.microservice.template.exception.ModelNotFoundException;
 import com.sahil.microservice.template.model.Model;

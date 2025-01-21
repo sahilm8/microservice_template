@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sahil.microservice.template.dto.AddModelRequest;
-import com.sahil.microservice.template.dto.AddModelResponse;
-import com.sahil.microservice.template.dto.DeleteModelRequest;
-import com.sahil.microservice.template.dto.DeleteModelResponse;
-import com.sahil.microservice.template.dto.GetModelRequest;
-import com.sahil.microservice.template.dto.GetModelResponse;
+import com.sahil.microservice.template.dto.addModel.AddModelRequest;
+import com.sahil.microservice.template.dto.addModel.AddModelResponse;
+import com.sahil.microservice.template.dto.deleteModel.DeleteModelRequest;
+import com.sahil.microservice.template.dto.deleteModel.DeleteModelResponse;
+import com.sahil.microservice.template.dto.getModel.GetModelRequest;
+import com.sahil.microservice.template.dto.getModel.GetModelResponse;
 import com.sahil.microservice.template.service.ModelService;
 
 import jakarta.validation.Valid;
